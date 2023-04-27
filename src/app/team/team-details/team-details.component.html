@@ -1,0 +1,13 @@
+<div  *ngIf="team">
+  <h2>{{team.name}} Details</h2>
+  <div><span>id: </span> {{team.id}}</div>
+  <div>
+    <span>name: </span> {{team.name}}
+  </div>
+  <div>
+    <li *ngFor="let players of team.players">
+        <span class="badge">{{players.name}} {{players.surname}}</span>
+    </li>
+  </div>
+  <button (click)="goBack()">Go Back</button>
+</div>

@@ -41,7 +41,7 @@ export class AppComponent implements OnInit, OnDestroy{
   }
 
   setLoginDisplay(){
-    if (this.oauthService.hasValidIdToken()) {
+    if (this.oauthService.hasValidAccessToken()) {
       this.loginDisplay = true;
     }
   }

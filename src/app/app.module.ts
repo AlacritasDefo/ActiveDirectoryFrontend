@@ -10,13 +10,22 @@ import {RouterLinkWithHref} from "@angular/router";
 import {AuthGuard} from "./auth.guard";
 import {AuthConfig, NullValidationHandler, OAuthModule, OAuthStorage, ValidationHandler} from "angular-oauth2-oidc";
 import {authConfig} from "./auth.config";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {AppRoutingModule} from "./app-routing.module";
+import { TeamComponent } from './team/team.component';
+import { PlayerComponent } from './player/player.component';
+import { TeamDetailsComponent } from './team/team-details/team-details.component';
+import { PlayerDetailsComponent } from './player/player-details/player-details.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
+    TeamComponent,
+    PlayerComponent,
+    TeamDetailsComponent,
+    PlayerDetailsComponent,
   ],
   imports: [
     HttpClientModule,
@@ -31,7 +40,8 @@ import {AppRoutingModule} from "./app-routing.module";
     MatButtonModule,
     MatTabsModule,
     RouterLinkWithHref,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [AuthGuard,
     {
@@ -42,7 +52,8 @@ import {AppRoutingModule} from "./app-routing.module";
     },
     {
       provide: ValidationHandler, useClass: NullValidationHandler
-    }],
+    },
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
