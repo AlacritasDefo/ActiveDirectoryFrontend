@@ -1,0 +1,10 @@
+<h2>Teams</h2>
+<div>
+  <ul class = "teams">
+    <li *ngFor="let team of teams">
+      <a routerLink="detail/{{team.id}}">
+        <span class="badge">{{team.name}}</span>
+      </a>
+    </li>
+  </ul>
+</div>
