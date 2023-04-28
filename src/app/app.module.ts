@@ -31,7 +31,7 @@ import {FormsModule} from "@angular/forms";
     HttpClientModule,
     OAuthModule.forRoot({
       resourceServer: {
-        allowedUrls: ['https://graph.microsoft.com/v1.0/me'],
+        allowedUrls: ['https://graph.microsoft.com/v1.0/me', 'http://localhost:8080'],
         sendAccessToken: true
       }
     }),

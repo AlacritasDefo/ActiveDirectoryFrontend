@@ -7,7 +7,7 @@ export const authConfig: AuthConfig = {
   postLogoutRedirectUri: window.location.origin,
   clientId: '75049194-c412-475f-b807-a21acd4bc27d',
   responseType: 'code',
-  scope: 'User.Read',
+  scope: 'api://75049194-c412-475f-b807-a21acd4bc27d/User.Read',
   useSilentRefresh: true,
   strictDiscoveryDocumentValidation: false
 }
